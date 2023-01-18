@@ -46,10 +46,11 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1rem 0 .25rem;
+    padding: 2.25rem 0 1.25rem;
 
     @include mobile {
       flex-wrap: wrap;
+      padding: 1rem 0 .5rem;
     }
 
     .menuItem {
