@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './menuNav.scss'
 import { products } from '../../products'
 
-const MenuNav = () => {
+const MenuNav = ({ handleClick }) => {
+
   return (
     <div>
       <nav id="nav">
@@ -27,8 +28,12 @@ const MenuNav = () => {
           </div>
         </div>
         <div className="navBottom">
-          {products.map((product) => (
-            <h3 className="menuItem" key={product.id}>
+          {products.map((product, index) => (
+            <h3 
+              className="menuItem" 
+              key={product.id}
+              onClick={() => handleClick(index)}
+            >
               {product.title.toUpperCase()}
             </h3>
           ))}

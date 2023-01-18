@@ -2,10 +2,10 @@ import React from 'react'
 import './slider.scss'
 import { products } from '../../products'
 
-const Slider = () => {
+const Slider = ({ style }) => {
   return (
     <div className='slider'>
-      <div className="sliderWrapper">
+      <div className="sliderWrapper" style={style}>
         {products.map((product) => (
           <div className="sliderItem">
             <img className='sliderImg' src={product.colors[0].img} />
