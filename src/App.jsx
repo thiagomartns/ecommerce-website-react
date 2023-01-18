@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Features from "./Components/features/Features";
 import MenuNav from "./Components/menuNav/MenuNav";
 import Slider from "./Components/slider/Slider";
 
@@ -14,6 +15,7 @@ function App() {
     <div className="App">
       <MenuNav handleClick={handleClick} />
       <Slider style={style} />
+      <Features />
     </div>
   );
 }
