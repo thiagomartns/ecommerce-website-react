@@ -7,15 +7,15 @@ const Slider = ({ style }) => {
     <div className='slider'>
       <div className="sliderWrapper" style={style}>
         {products.map((product) => (
-          <div className="sliderItem">
+          <div className="sliderItem" key={product.id}>
             <img className='sliderImg' src={product.colors[0].img} />
             <div className="sliderBg"></div>
             <h1 className="sliderTitle">
               {`${product.title.toUpperCase()} NEW SEASON`}
             </h1>
-            <h2 class="sliderPrice">{`$${product.price}`}</h2>
+            <h2 className="sliderPrice">{`$${product.price}`}</h2>
             <a href="#product">
-              <button class="buyButton">BUY NOW!</button>
+              <button className="buyButton">BUY NOW!</button>
             </a>
           </div>
         ))}
