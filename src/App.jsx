@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Features from "./Components/features/Features";
 import MenuNav from "./Components/menuNav/MenuNav";
+import Product from "./Components/product/Product";
 import Slider from "./Components/slider/Slider";
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       <MenuNav handleClick={handleClick} />
       <Slider style={style} />
       <Features />
+      <Product />
     </div>
   );
 }
