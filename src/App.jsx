@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Features from "./Components/features/Features";
+import Footer from "./Components/footer/Footer";
 import Gallery from "./Components/gallery/Gallery";
 import MenuNav from "./Components/menuNav/MenuNav";
 import NewSeason from "./Components/newSeason/NewSeason";
@@ -25,6 +26,7 @@ function App() {
       <Product chosenProduct={chosenProduct} />
       <Gallery />
       <NewSeason />
+      <Footer />
     </div>
   );
 }
