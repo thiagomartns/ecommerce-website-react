@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import ModalProduct from '../modalProduct/ModalProduct';
 import './product.scss'
 
 const Product = ({ chosenProduct }) => {
@@ -7,6 +8,7 @@ const Product = ({ chosenProduct }) => {
   
   const [imgSrc, setImgSrc] = useState(null)
   const [selectedSize, setSelectedSize] = useState(null)
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleColorClick = (newSrc) => {
     setImgSrc(newSrc)
@@ -44,8 +46,17 @@ const Product = ({ chosenProduct }) => {
             </div>
           ))}
         </div>
-        <button className="productButton">BUY NOW!</button>
+        <button 
+          className="productButton"
+          onClick={() => setIsModalOpen(true)}
+        >
+          BUY NOW!
+        </button>
       </div>
+      <ModalProduct 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+      />
     </div>
   )
 }
