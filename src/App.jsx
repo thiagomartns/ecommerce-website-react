@@ -2,6 +2,7 @@ import { useState } from "react";
 import Features from "./Components/features/Features";
 import Gallery from "./Components/gallery/Gallery";
 import MenuNav from "./Components/menuNav/MenuNav";
+import NewSeason from "./Components/newSeason/NewSeason";
 import Product from "./Components/product/Product";
 import Slider from "./Components/slider/Slider";
 import { products } from "./products";
@@ -23,6 +24,7 @@ function App() {
       <Features />
       <Product chosenProduct={chosenProduct} />
       <Gallery />
+      <NewSeason />
     </div>
   );
 }
