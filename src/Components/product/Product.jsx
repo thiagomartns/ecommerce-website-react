@@ -3,7 +3,7 @@ import './product.scss'
 
 const Product = ({ chosenProduct }) => {
 
-  const [imgSrc, setImgSrc] = useState(chosenProduct.colors[0].img)
+  const [imgSrc, setImgSrc] = useState(null)
 
   const handleColorClick = (newSrc) => {
     setImgSrc(newSrc)
@@ -21,16 +21,14 @@ const Product = ({ chosenProduct }) => {
         <h2 className="productPrice">{`$${chosenProduct.price}`}</h2>
         <p className="productDesc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, deleniti qui culpa blanditiis dolorum laboriosam nihil nemo fugiat excepturi sint rerum! Soluta?</p>
         <div className="colors">
-          <div 
-            className="color" 
-            style={{ backgroundColor: `${chosenProduct.colors[0].code}` }}
-            onClick={() => handleColorClick(chosenProduct.colors[0].img)}
-          ></div>
-          <div 
-            className="color" 
-            style={{ backgroundColor: `${chosenProduct.colors[1].code}` }}
-            onClick={() => handleColorClick(chosenProduct.colors[1].img)} 
-          ></div>
+          {chosenProduct.colors.map((color, index) => (
+            <div 
+              key={index}
+              className="color" 
+              style={{ backgroundColor: color.code }}
+              onClick={() => handleColorClick(color.img)}
+            ></div>
+          ))}
         </div>
         <div className="sizes">
           <div className="size">42</div>
