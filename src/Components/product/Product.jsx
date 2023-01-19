@@ -3,7 +3,10 @@ import './product.scss'
 
 const Product = ({ chosenProduct }) => {
 
+  const sizes = [42, 43, 44];
+  
   const [imgSrc, setImgSrc] = useState(null)
+  const [selectedSize, setSelectedSize] = useState(null)
 
   const handleColorClick = (newSrc) => {
     setImgSrc(newSrc)
@@ -31,9 +34,15 @@ const Product = ({ chosenProduct }) => {
           ))}
         </div>
         <div className="sizes">
-          <div className="size">42</div>
-          <div className="size">43</div>
-          <div className="size">44</div>
+          {sizes.map((size, index) => (
+            <div 
+              key={index} 
+              className={`size ${size === selectedSize ? 'selected' : ''}`}
+              onClick={() => setSelectedSize(size)}
+            >
+              {size}
+            </div>
+          ))}
         </div>
         <button className="productButton">BUY NOW!</button>
       </div>
